@@ -1,13 +1,14 @@
 let humanScore=0;
 let computerScore=0;
-
-function playGame(){
+   
+function playGame(){  //Main game function
     
-    for(i=0;i<5;i++){
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-         playRound(humanSelection, computerSelection);
+    for(i=0;i<5;i++){ //Game loop
+        let humanSelection = getHumanChoice(); //Get input
+        let computerSelection = getComputerChoice(); //Generate computer choice
+         playRound(humanSelection, computerSelection); 
     }
+    //Determine the winner after all rounds
     if(humanScore>computerScore){
         console.log("You win the game");
     }
@@ -20,6 +21,7 @@ function playGame(){
    
 
 }
+//Generate computer choice
 function getComputerChoice(){
     let value=Math.floor(Math.random()*3);
     let str="";
@@ -40,6 +42,7 @@ function getHumanChoice(){
     return prompt("Enter your choice");
 }
 
+//Play a single round
 function playRound(humanChoice,computerChoice){
     humanChoice=humanChoice.toLowerCase();
     computerChoice=computerChoice.toLowerCase();
@@ -57,5 +60,5 @@ function playRound(humanChoice,computerChoice){
     }
     console.log("Your score: %d \nComputer score:%d\n\n",humanScore,computerScore);
 }
-
+//Start the game
 playGame();
