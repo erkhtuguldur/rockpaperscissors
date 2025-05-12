@@ -18,25 +18,7 @@ rockButton.addEventListener("click",eventHandler);
 paperButton.addEventListener("click",eventHandler);
 scissorsButton.addEventListener("click",eventHandler);
 bodyElement.appendChild(outputText);
-// function playGame(){  
-    
-//     let humanSelection = getHumanChoice(); 
-//     let computerSelection = getComputerChoice(); 
-//     playRound(humanSelection, computerSelection); 
-    
-   
-//     if(humanScore>computerScore){
-//         console.log("You win the game");
-//     }
-//     else if(humanScore==computerScore){
-//         console.log("It's a draw");
-//     }
-//     else{
-//         console.log("You lose the game");
-//     }
-   
 
-// }
 
 function getComputerChoice(){
     let value=Math.floor(Math.random()*3);
@@ -76,7 +58,6 @@ function playRound(humanChoice,computerChoice){
         humanScore>4 ? outputText.textContent+="You win the game. Click any button to restart." : outputText.textContent+="Computer wins the game. Click any button to restart.";
         humanScore=0;
         computerScore=0;
-        outputText="";
     }
 }
 
@@ -93,7 +74,3 @@ function eventHandler(e){
             break;
     }
 }
-
-
-//Start the game
-playGame();
